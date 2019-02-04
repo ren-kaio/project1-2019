@@ -1,0 +1,15 @@
+{
+  "name": "task2-2019",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\u0016https://github.com/ren-kaio/task2-2019"
+  },
+  "author": "ren-kaio",
+  "license": "ISC"
+}
