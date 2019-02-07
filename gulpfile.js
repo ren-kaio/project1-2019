@@ -8,8 +8,6 @@ let concat = require("gulp-concat"); // files concatenation - not neccessary her
 let uglify = require("gulp-uglify"); // js minification - not neccessary here  - delete??
 let sass = require("gulp-sass");
 let browserSync = require("browser-sync").create();
-// let useref = require("gulp-useref"); //html blocks concatenation - not neccessary here - delete??
-// let gulpIf = require("gulp-if"); // conditionally filter content - not neccessary here - delete??
 let imagemin = require("gulp-imagemin");
 let cache = require("gulp-cache");
 let cleanCss = require("gulp-clean-css"); // css minification
@@ -77,6 +75,7 @@ function cleandist() {
 
 function watch() {
     gulp.watch('app/sass/**/*.scss', gulp.series(styles));
+    gulp.watch('app/html/**/*.ejs', gulp.series(html));
     gulp.watch(paths.html.app, gulp.series(html));
 }
 

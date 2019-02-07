@@ -8,8 +8,31 @@
   },
   "repository": {
     "type": "git",
-    "url": "\u0016https://github.com/ren-kaio/task2-2019"
+    "url": "\u0016https://github.com/ren-kaio/project1-2019"
   },
   "author": "ren-kaio",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "del": "^3.0.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-cache": "^1.0.2",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-ejs": "^3.2.0",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-useref": "^3.1.2",
+    "run-sequence": "^2.1.0"
+  },
+  "dependencies": {
+    "npm": "^6.4.1"
+  }
 }

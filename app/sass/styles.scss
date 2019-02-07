@@ -1,0 +1,54 @@
+// styles here
+// MOBILE-FIRST !!!
+
+
+// Bootstrap 4 использует значение по умолчанию font-size of 16px, and its line-height is 1.5.
+
+
+// @mixins
+
+
+//fonts
+
+@font-face {
+  font-family: "PT Sans";
+  src: url("../fonts/PT_Sans-Web-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+
+@font-face {
+  font-family: "PT Sans Bold";
+  src: url("../fonts/PT_Sans-Web-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+
+body *, body .link {
+  font-size: 3.5rem !important;
+  font-family: "PT Sans", sans-serif;
+
+
+  @media (min-device-width:600px) {
+    font-size: 1.5rem !important;
+  }
+
+  @media (min-device-width:1024px) {
+    font-size: 1rem !important;
+  }
+
+}
+
+.navbar {
+  text-transform: uppercase;
+
+  .navbar-brand {
+    font-family: "PT Sans Bold", sans-serif;
+    vertical-align: center;
+  }
+
+
+}
+
