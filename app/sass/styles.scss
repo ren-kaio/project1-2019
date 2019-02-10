@@ -6,6 +6,9 @@
 
 
 // @mixins
+$bg: #353740;
+$clr1: #fff;
+$link-clr1: #61acfc;
 
 
 //fonts
@@ -24,31 +27,163 @@
   font-style: normal;
   font-weight: normal;
 }
-
-
-body *, body .link {
-  font-size: 3.5rem !important;
+body * {
   font-family: "PT Sans", sans-serif;
+}
+
+ .link, .nav-link {
+  font-size: 3.5rem !important;
 
 
   @media (min-device-width:600px) {
-    font-size: 1.5rem !important;
+    font-size: 1.7rem !important;
   }
 
   @media (min-device-width:1024px) {
-    font-size: 1rem !important;
+    font-size: 1.2rem !important;
   }
 
 }
 
+
+
+
+//header
+
 .navbar {
   text-transform: uppercase;
+  padding: 1.5rem;
 
   .navbar-brand {
     font-family: "PT Sans Bold", sans-serif;
     vertical-align: center;
   }
+}
+
+
+
+// preview block
+
+.preview_block {
+  background: $bg;
+  padding: 3rem;
+  display: block;
+  margin: 0 auto;
+}
+
+
+
+
+.preview_block__heading {
+  display: inline-block;
+  width: 100%;
+  font-size: 3.75rem; //45pt
+  color: $clr1;
+  margin-bottom: 2rem;
+  @media(min-device-width: 768px) {
+    max-width: 50rem;
+    font-size: 5.5rem; //45pt
+    margin-left: 2rem;
+
+  }
+
+  @media(min-width: 768px) {
+    max-width:  50rem;
+    font-size: 5.5rem;
+    margin-left: 2rem;
+
+  }
+}
+
+.preview_block__btn_container {
+  display: inline-block;
+  width: 100%;
+  @media(min-device-width: 768px) {
+    min-width: 5rem;
+  }
+  @media(min-width: 768px) {
+    min-width: 5rem; // если что подкорректировать может нужно?
+  }
+}
+
+
+.preview_block__btn {
+  display: inline-block;
+  padding: 1rem 4rem;
+  font-size: 2rem;
+  @media(min-device-width: 768px) {
+
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+
+  }
+
+}
+
+
+.preview_block__carousel {
+
+  display: none;
+  @media(min-device-width: 768px) {
+    display: block;
+  }
+
 
 
 }
 
+
+
+//directions_block
+
+.directions_block {
+  margin-top: 3rem;
+  text-align: center;
+  padding: 2rem;
+
+  * {
+  margin-bottom: 1rem;
+  }
+}
+
+.directions_block__el {
+  @media(max-device-width: 768px ) {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-top: 2rem;
+
+  }
+}
+
+.directions_block__el_heading {
+  font-size: 1.875rem;
+  @media(max-device-width: 768px ) {
+    font-size:4.5rem;
+  }
+
+}
+
+.directions_block__el_text {
+  font-size: 0.9375rem;
+  line-height: 1.625rem;
+  @media(max-device-width: 768px ) {
+    font-size:3rem;
+    line-height: 3rem;
+  }
+
+}
+
+.directions_block__el_more {
+  color: $link-clr1;
+  font-weight: bold;
+  @media(max-device-width: 768px ) {
+    font-size:3rem;
+    padding-bottom: 1rem;
+    }
+
+  &:hover {
+    text-decoration: none; //
+    color: darken($link-clr1, 15%);
+    }
+  }
