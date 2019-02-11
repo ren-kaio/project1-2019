@@ -6,7 +6,8 @@
 
 
 // @mixins
-$bg: #353740;
+$bg1: #353740;
+$bg2:#e3e6ec;
 $clr1: #fff;
 $link-clr1: #61acfc;
 
@@ -45,6 +46,12 @@ body * {
 
 }
 
+ @mixin heading-style {
+   font-size: 1.875rem;
+   @media(max-device-width: 768px ) {
+     font-size:4.5rem;
+   }
+ }
 
 
 
@@ -65,7 +72,7 @@ body * {
 // preview block
 
 .preview_block {
-  background: $bg;
+  background: $bg1;
   padding: 3rem;
   display: block;
   margin: 0 auto;
@@ -157,10 +164,7 @@ body * {
 }
 
 .directions_block__el_heading {
-  font-size: 1.875rem;
-  @media(max-device-width: 768px ) {
-    font-size:4.5rem;
-  }
+  @include heading-style;
 
 }
 
@@ -187,3 +191,41 @@ body * {
     color: darken($link-clr1, 15%);
     }
   }
+
+
+
+
+.portfolio {
+  padding: 0 10rem;
+  background: $bg2;
+}
+
+.portfolio__heading {
+  @include heading-style;
+  padding: 3rem 0;
+
+}
+
+
+.portfolio__item {
+  margin: 0;
+  padding: 0;
+  height: 15rem;
+  background-image: url("../img/portf-pic1.jpg");
+  background-size: auto 100%;
+}
+
+.portfolio__item--preview2 {
+  background-image: url("../img/portf-pic2.jpg");
+}
+
+.portfolio__item--preview3 {
+  background-image: url("../img/portf-pic3.jpg");
+}
+
+
+.clients__heading {
+  @include heading-style;
+  padding: 3rem 0;
+
+}
