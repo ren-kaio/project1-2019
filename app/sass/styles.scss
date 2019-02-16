@@ -6,10 +6,10 @@
 
 
 // @mixins
-$bg1: #353740;
-$bg2:#e3e6ec;
-$clr1: #fff;
-$link-clr1: #61acfc;
+$dark-bg: #353740;
+$light-bg:#e3e6ec;
+$light-color: #fff;
+$link-light-color: #61acfc;
 $gray: #626262;
 
 
@@ -35,28 +35,20 @@ body * {
 }
 
  .link, .nav-link {
-  font-size: 3.5rem !important;
-
-
-  @media (min-device-width:600px) {
-    font-size: 1.7rem !important;
-  }
-
-  @media (min-device-width:1024px) {
-    font-size: 1.2rem !important;
-  }
-
+    font-size: 1.25rem;
 }
+
 
  @mixin heading-style {
    font-size: 1.875rem;
    color: $gray;
-   @media(max-device-width: 768px ) {
-     font-size:4.5rem;
-   }
  }
 
 
+// advise from https://stackoverflow.com/questions/14270084/overflow-xhidden-doesnt-prevent-content-from-overflowing-in-mobile-browsers/14271049#14271049
+.wrapper {
+  overflow-x:hidden;
+}
 
 //header
 
@@ -70,12 +62,17 @@ body * {
   }
 }
 
+.nav-divider {
+  padding: 10px;
+
+}
+
 
 
 // preview block
 
-.preview_block { // мб заменить на preview-block ??? вместо нижнего подчеркивания использовать тире??  и везде в других местах также поменять
-  background: $bg1;
+.preview-block {
+  background: $dark-bg;
   padding: 3rem;
   display: block;
  // margin: 0 auto;
@@ -84,199 +81,213 @@ body * {
 
 
 
-.preview_block__heading {
+.preview-block__heading {
   display: inline-block;
   width: 100%;
   font-size: 3.75rem; //45pt
-  color: $clr1;
+  color: $light-color;
   margin-bottom: 2rem;
-  @media(min-device-width: 768px) {
-    max-width: 50rem;
-    font-size: 5.5rem; //45pt
-    margin-left: 2rem;
-
-  }
-
-  @media(min-width: 768px) {
-    max-width:  50rem;
-    font-size: 5.5rem;
-    margin-left: 2rem;
-
-  }
 }
 
-.preview_block__btn_container {
+.preview-block__btn-container {
   display: inline-block;
   width: 100%;
-  @media(min-device-width: 768px) {
-    min-width: 5rem;
-  }
-  @media(min-width: 768px) {
-    min-width: 5rem; // если что подкорректировать может нужно?
-  }
+  /*
+    @media(min-device-width: 768px) {
+      min-width: 5rem;
+    }
+    @media(min-width: 768px) {
+      min-width: 5rem; // если что подкорректировать может нужно?
+    }
+  */
 }
 
-
-.preview_block__btn {
-  display: inline-block;
-  padding: 1rem 4rem;
-  font-size: 2rem;
-  @media(min-device-width: 768px) {
-
-    font-size: 1.6rem;
+  .preview-block__btn {
+    display: inline-block;
     padding: 1rem 2rem;
+    font-size: 1.6rem;
 
   }
 
-}
+  .preview-block__carousel {
 
-
-.preview_block__carousel {
-
-  display: none;
-  @media(min-device-width: 768px) {
-    display: block;
-  }
-}
-
-
-
-
-
-
-
-//directions_block
-
-.directions_block {
-  margin-top: 3rem;
-  text-align: center;
-  padding: 2rem;
-
-  * {
-  margin-bottom: 1rem;
-  }
-}
-
-.directions_block__el {
-  @media(max-device-width: 768px ) {
-    flex: 0 0 100%;
-    max-width: 100%;
-    margin-left: 0;
-    margin-top: 2rem;
-
-  }
-}
-
-.directions_block__el_heading {
-  @include heading-style;
-
-}
-
-.directions_block__el_text {
-  font-size: 0.9375rem;
-  line-height: 1.625rem;
-  @media(max-device-width: 768px ) {
-    font-size:3rem;
-    line-height: 3rem;
-  }
-
-}
-
-.directions_block__el_more {
-  color: $link-clr1;
-  font-weight: bold;
-  @media(max-device-width: 768px ) {
-    font-size:3rem;
-    padding-bottom: 1rem;
-    }
-
-  &:hover {
-    text-decoration: none; //
-    color: darken($link-clr1, 15%);
-    }
-  }
-
-
-
-
-.portfolio {
-  padding: 0 10rem;
-  padding-bottom: 5rem;
-  background: $bg2;
-}
-
-.portfolio__heading {
-  @include heading-style;
-  padding: 3rem 0;
-
-}
-
-
-.portfolio__item {
-  margin: 0;
-  padding: 0;
-  height: 15rem;
-  background-image: url("../img/portf-pic1.jpg");
-  background-size: auto 100%;
-}
-
-.portfolio__item--preview2 {
-  background-image: url("../img/portf-pic2.jpg");
-}
-
-.portfolio__item--preview3 {
-  background-image: url("../img/portf-pic3.jpg");
-}
-
-
-// .clients
-
-
-.clients {
-  background: #fff;
-  padding: 5rem 10rem;
-
-}
-
-.clients__heading {
-  @include heading-style;
-  padding-bottom: 3rem;
-}
-
-
-
-.carousel-item__row {
-  padding: 0 10rem;
-  margin: 0;
-}
-
-.carousel-item__row--wide { // модификатор wide, т.к. убрали тут padding=10 (поменяли его на padding=0)
-  padding: 0;
-}
-
-.carousel-item__el {
-  display: inline-block;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  height: 6rem;
-  //width: 20rem;
-  vertical-align: center;
-}
-
-.carousel-control-prev-icon2 {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='e3e6ec' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e");
-}
-
-.carousel-control-next-icon2 {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='e3e6ec' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e")
-}
-
-
-.carousel--xs  {
-  display: block;
-  @media(min-device-width: 768px) {
     display: none;
+    @media(min-device-width: 768px) {
+      display: block;
+    }
   }
-}
+
+  //directions_block
+
+  .directions_block {
+    margin-top: 3rem;
+    text-align: center;
+    padding: 2rem;
+
+    * {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .directions_block__el {
+    /*  @media(max-device-width: 768px ) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-left: 0;
+        margin-top: 2rem;
+      }*/
+  }
+
+  .directions_block__el_heading {
+    @include heading-style;
+    height: 4rem;
+
+  }
+
+  .directions_block__el_text {
+    font-size: 1.25rem; // 15pt
+
+  }
+
+  .directions_block__el_more {
+    color: $link-light-color;
+    font-weight: bold;
+   padding-bottom: 1rem;
+    &:hover {
+      text-decoration: none; //
+      color: darken($link-light-color, 15%);
+    }
+  }
+
+  .portfolio {
+
+    padding-bottom: 5rem;
+    background: $light-bg;
+    @media(min-width: 1200px) {
+      padding: 5rem 10rem;
+    }
+  }
+
+  .portfolio__heading {
+    @include heading-style;
+    padding: 3rem 0;
+
+  }
+
+  .portfolio__item {
+    margin: 0;
+    padding: 0;
+    height: 15rem;
+    background-image: url("../img/portf-pic1.jpg");
+    background-size: auto 100%;
+  }
+
+  .portfolio__item--preview2 {
+    background-image: url("../img/portf-pic2.jpg");
+  }
+
+  .portfolio__item--preview3 {
+    background-image: url("../img/portf-pic3.jpg");
+  }
+
+  // .clients
+
+  .clients {
+    background: #fff;
+    padding: 2.5rem;
+
+    @media(min-device-width: 1200px) {
+      padding: 5rem 10rem;
+    }
+
+  }
+
+  .clients__heading {
+    @include heading-style;
+    padding-bottom: 3rem;
+  }
+
+  .carousel-item__row {
+    padding: 0 10rem;
+    margin: 0;
+  }
+
+  .carousel-item__row--wide { // модификатор wide, т.к. убрали тут padding=10 (поменяли его на padding=0)
+    padding: 0;
+    margin: 0;
+  }
+
+  .carousel-item__el {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 6rem;
+    //width: 20rem;
+    vertical-align: center;
+  }
+
+  .carousel-control-prev-icon2 {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='e3e6ec' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e");
+  }
+
+  .carousel-control-next-icon2 {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='e3e6ec' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e")
+  }
+
+  .carousel--xs {
+    display: block;
+    @media(min-device-width: 768px) {
+      display: none;
+    }
+  }
+
+  // footer
+
+  .footer {
+    background: $dark-bg;
+    color: $light-color !important;
+    padding-top: 2rem !important;
+    padding-bottom: 4rem !important;
+    padding: .7rem;
+    font-size: 1.2rem; // 15pt;
+
+  }
+
+  .footer__navbar {
+    text-transform: none;
+    background: $dark-bg !important;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+
+  }
+
+  .footer__nav-link {
+    text-decoration: none;
+    color: $light-color !important;
+    display: inline-block;
+  }
+
+  .footer__nav-item {
+    display: inline-block;
+    padding-right: .2rem;
+  }
+
+  .footer__copyright {
+    padding-left: .5rem;
+
+  }
+
+  .footer__more {
+    font-size: 1rem; //12pt;
+    margin-top: 2rem;
+  }
+
+  .social__icon {
+    display: inline-block;
+    list-style-type: none;
+    padding-left: .5rem;
+
+  }
+
 
