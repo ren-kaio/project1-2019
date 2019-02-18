@@ -5,7 +5,7 @@
 
 let gulp = require("gulp");
 let concat = require("gulp-concat"); // files concatenation - not neccessary here  - delete from here and from package.json ??
-let uglify = require("gulp-uglify"); // js minification - not neccessary here  - delete??
+let uglify = require("gulp-uglify"); // js minification
 let sass = require("gulp-sass");
 let browserSync = require("browser-sync").create();
 let imagemin = require("gulp-imagemin");
@@ -55,6 +55,13 @@ function html() {
         .pipe(browserSync.stream());
 }
 
+function js() {
+    return gulp.src(paths.scripts.app)
+        .pipe(uglify())
+        .pipe(gulp.dest('dist/js'))
+        .pipe(browserSync.stream());
+}
+
 function img() {
     return gulp.src("app/img/**/*") // берем файлы из папки img
         .pipe(cache(imagemin() ) ) // минификация файлов
@@ -79,7 +86,7 @@ function watch() {
     gulp.watch(paths.html.app, gulp.series(html));
 }
 
-let build = gulp.series(cleandist, fonts, img, styles, html);
+let build = gulp.series(cleandist, fonts, img, styles, js, html);
 
 
 function reload(done) {

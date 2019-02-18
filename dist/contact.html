@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><!-- везде без пробелов!!! -->
+
+    <!-- Bootstrap + font-awesome styles -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+</head>
+
+<body>
+<div class="wrapper">
+<header class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <a class="navbar-brand link" href="#"><img src="img/bluebox-icon.png" /> Bluebox</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item"><span class="nav-divider d-none d-sm-none  d-md-block  "> | </span></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services </a>
+                </li>
+                <li class="nav-item"><span class="nav-divider d-none d-sm-none  d-md-block"> | </span> </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Works </a>
+                </li>
+                <li class="nav-item"><span class="nav-divider d-none d-sm-none  d-md-block"> | </span> </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Blog </a>
+                </li>
+                <li class="nav-item"><span class="nav-divider d-none d-sm-none  d-md-block"> | </span> </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact us</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+</header>
+
+<!-- Иcпользую след технологии: GIT(command line!), ejs->html, sass->css, bootstrap, БЭМ(!!!), js при необходимости -->
+<!-- mobile first !!!-->
+
+<main class="container-fluid">
+    <div class="contact row">
+        <h1 class="contact__header col-sm-12">Get in touch with us</h1>
+        <p class="contact-msg col-sm-12">
+            Thank you for stopping by! We are happy to hear from you.
+            Please contact us through the form below and we will get back to you as soon as we can.
+        </p>
+
+        <form class="contact__form contact-form col-md-6">
+            <div class="form-group">
+                <label for="contact-form__name">Name</label>
+                <input class="form-control contact-form__name" id="contact-form__name" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="contact-form__email">Email address</label>
+                <input type="email" class="form-control contact-form__email" id="contact-form__email" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="contact-form__subject">Subject</label>
+                <input class="form-control contact-form__subject" id="contact-form__subject" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="contact-form__desc">Description</label>
+                <textarea class="form-control contact-form__desc" id="contact-form__desc" >
+                </textarea>
+            </div>
+            <input type="submit" class="btn contact-form__btn" value="Submit" />
+        </form>
+
+        <div class="contact__map contact-map col-md-5">
+            <h3 class="contact-map__header">We are here!</h3>
+            <div id="map-canvas"></div>
+
+            <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnycWatbGyK6ldFqErjFtko1yeMclNUOA"></script>
+            <script type="text/javascript" src="js/mapInit.js"></script>
+
+            <!--
+            в консоли - ошибка - нужно обновить API key, но их нужно покупать за отд плату
+            -->
+
+            <div class="contact__info row">
+                <div class="contact__icon col-md-2"><img src="img/contact-icon.png"> </div>
+                <div class=" col-md-10">
+                    <p class="contact__company ">BlueBox Company</p>
+                    <p class="contact__address">
+                        1234 Road<br/>
+                        London, SW1 000</p>
+                    <p class="contact__phone">
+                       Tel: 01000 334 556
+                    </p>
+                    <p class="contact__fax">
+                      Fax: 01000 334 556
+                    </p>
+                    <p class="contact__email">
+                        Email: <a href="mailto:info@domainname.com">info@domainname.com</a>
+                    </p>
+                </div>
+    </div>
+
+
+</main>
+
+
+</body>
+
+<footer class="footer  py-3 mt-auto">
+
+    <div class="container-fluid">
+        <div class="row">
+                <ul class="footer__navbar col-md-5 offset-md-1">
+                     <li class="footer__nav-item">
+                        <a class="footer__nav-link" href="#">Home </a>
+                     </li>
+                     <li class="footer__nav-item">| </li>
+                     <li class="footer__nav-item">
+                        <a class="footer__nav-link" href="#">About </a>
+                     </li>
+                     <li class="footer__nav-item">| </li>
+                     <li class="footer__nav-item">
+                         <a class="footer__nav-link" href="#">Services </a>
+                     </li>
+                     <li class="footer__nav-item"> | </li>
+                     <li class="footer__nav-item">
+                         <a class="footer__nav-link" href="#">Works </a>
+                     </li>
+                     <li class="footer__nav-item"> | </li>
+                     <li class="footer__nav-item">
+                         <a class="footer__nav-link" href="#">Blog </a>
+                     </li>
+                     <li class="footer__nav-item"> | </li>
+                     <li class="footer__nav-item">
+                         <a class="footer__nav-link" href="#">Contact us</a>
+                     </li>
+                </ul>
+            <div class="social offset-md-1 col-md-5">
+                <ul class="social__icons-list">
+                    <li class="social__icon"><a href="#" class="social__link " ><img src="img/fb-footer-icon.png" /></a></li>
+                    <li class="social__icon"><a href="#" class="social__link " ><img src="img/linkedin-footer-icon.png" /></a></li>
+                    <li class="social__icon"><a href="#" class="social__link " ><img src="img/twitter-footer-icon.png" /></a></li>
+                    <li class="social__icon"><a href="#" class="social__link " ><img src="img/pinterest-footer-icon.png" /></a></li>
+                    <li class="social__icon"><a href="#" class="social__link " ><img src="img/dribble-footer-icon.png" /></a></li>
+                    <li class="social__icon"><a href="#" class="social__link " ><img src="img/gplus-footer-icon.png" /></a></li>
+                </ul>
+            </div>
+            <div class="footer__copyright offset-md-1 col-md-5 ">
+                © 2013 BlueBox.  All Rights Reserved.
+            </div>
+
+            <div class="footer__more offset-md-1 col-sm-12 ">
+                The logos used in the design are the property of their respective owners / copyright holders.
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- Bootstrap + jQuery + Popper scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</footer>
+</div> <!-- wrapper div ends here -->
+
+</html>

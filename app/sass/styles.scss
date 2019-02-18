@@ -11,7 +11,7 @@ $light-bg:#e3e6ec;
 $light-color: #fff;
 $link-light-color: #61acfc;
 $gray: #626262;
-
+$contact-form__btn_color: #61acfc;
 
 
 //fonts
@@ -48,6 +48,10 @@ body * {
 // advise from https://stackoverflow.com/questions/14270084/overflow-xhidden-doesnt-prevent-content-from-overflowing-in-mobile-browsers/14271049#14271049
 .wrapper {
   overflow-x:hidden;
+
+  @media(min-width: 1600px) {
+    padding: 0 15rem;
+  }
 }
 
 //header
@@ -84,27 +88,24 @@ body * {
 .preview-block__heading {
   display: inline-block;
   width: 100%;
-  font-size: 3.75rem; //45pt
   color: $light-color;
   margin-bottom: 2rem;
+  font-size: 2.75rem;
+
+  @media(min-width: 768px) {
+    font-size: 3.75rem; //45pt
+
+  }
 }
 
 .preview-block__btn-container {
   display: inline-block;
   width: 100%;
-  /*
-    @media(min-device-width: 768px) {
-      min-width: 5rem;
-    }
-    @media(min-width: 768px) {
-      min-width: 5rem; // если что подкорректировать может нужно?
-    }
-  */
 }
 
   .preview-block__btn {
     display: inline-block;
-    padding: 1rem 2rem;
+    padding: .7rem 1.7rem;
     font-size: 1.6rem;
 
   }
@@ -170,7 +171,7 @@ body * {
 
   .portfolio__heading {
     @include heading-style;
-    padding: 3rem 0;
+    padding: 3rem;
 
   }
 
@@ -259,6 +260,7 @@ body * {
     background: $dark-bg !important;
     padding-left: 0;
     margin-bottom: 1.5rem;
+    padding-left: 15px;
 
   }
 
@@ -283,11 +285,77 @@ body * {
     margin-top: 2rem;
   }
 
+  .social__icons-list {
+    padding: 0;
+    margin: 0;
+  }
+
   .social__icon {
     display: inline-block;
     list-style-type: none;
-    padding-left: .5rem;
-
+    padding-right: .5rem;
+    padding-bottom: 1rem;
   }
 
 
+
+// contact
+
+.contact__header {
+  color: $gray;
+  font-size: 2.8125rem; //45pt;
+  background: #e3e6ec;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.contact-msg {
+
+}
+
+.contact {
+  font-family: "PT Sans", sans-serif;
+  font-size: 0.9375rem; // 15pt;
+  line-height: 1.5rem;
+}
+
+.contact-map__header {
+  font-size: 1.875rem; // 30pt;
+  color: $gray;
+  padding-bottom: 2rem;
+
+}
+
+.contact-form__desc {
+  height: 12rem !important;
+}
+
+#map-canvas {
+    width: 100%;
+    height: 300px;
+    margin-bottom: -2rem;
+    border: 2px solid #eee;
+  }
+
+
+
+
+.contact__info {
+  padding-top: 4.5rem;
+}
+
+.contact__company {
+  font-family: "PT Sans Bold", sans-serif;
+  font-weight: bold;
+  font-size: 1.25rem; // 20pt;
+}
+
+.contact-form__btn {
+  padding: 1rem 5rem;
+  background: $contact-form__btn_color;
+  color: $light-color;
+  font-family: "PT Sans", sans-serif;
+  font-size: 1.375rem; // 22pt;
+  margin-top: 1rem;
+
+}
