@@ -3,21 +3,25 @@
 
 <main class="container-fluid container-fluid_no-padding"><!-- container-fluid_no-margin - модфикатор -->
         <h1 class="page__header  portfolio-page__header-text col-sm-12">See our works
-            <%  let arr = ["Web design", "Icons", "Illustrations", "Misc"];
-             for( let i=0; i< arr.length; i++) {
-            %>
-            <a class=" header-text__cat" href="#">
-                <%= arr[i] %>
-            </a>
-            <% } %>
+            <span class="d-none d-lg-inline-block">
+                <%  let arr = ["Web design", "Icons", "Illustrations", "Misc"];
+                 for( let i=0; i< arr.length; i++) {
+                %>
+                <a class=" header-text__cat" href="#">
+                    <%= arr[i] %>
+                </a>
+                <% } %>
+            </span>
         </h1>
 
         <%  let arr1 = ["Web design", "Icons", "Illustrations", "Misc"];
         for( let i=0; i< arr1.length; i++) {
         %>
-    <div class="page portfolio-page row">
-
-    <div class="col-md-5">
+    <div class="page portfolio-page portfolio-page-block row">
+        <h3 class="col-md-12 portfolio-page-block__header">
+            <%= arr[i] %>
+        </h3>
+        <div class="col-md-5">
             <figure class="portfolio-page__item">
                 <p class="portfolio-page__img-container">
                     <img src=<%-"img/portf-coffee-"+(i+1)+".jpg"%> class="portfolio-page__img"/>
@@ -35,6 +39,8 @@
                 </figcaption>
             </figure>
         </div>
+        <div class="col-md-1 col-sm-0"></div>
+        <div class="col-md-1  col-sm-0"></div>
         <div class="col-md-5">
             <figure class="portfolio-page__item">
                 <p class="portfolio-page__img-container">
@@ -54,13 +60,10 @@
             </figure>
         </div>
     </div>
+    <div class="block-divider"></div>
 
     <% } %>
 
-        <p class="contact-form-msg col-md-6">
-            Thank you for stopping by! We are happy to hear from you.
-            Please contact us through the form below and we will get back to you as soon as we can.
-        </p>
 </main>
 
 

@@ -36,7 +36,12 @@ body * {
 }
 
  .link, .nav-link {
-    font-size: 1.25rem;
+
+    font-size: 1rem;
+
+   @media(min-width: 1024px) {
+     font-size: 1.25rem;
+   }
 }
 
 
@@ -84,7 +89,9 @@ body * {
 
 .navbar {
   text-transform: uppercase;
-  padding: 1.5rem 10rem;
+  @media(min-width: 1400px) {
+    padding: 1.5rem 10rem;
+  }
 
   .navbar-brand {
     font-family: "PT Sans Bold", sans-serif;
@@ -393,9 +400,28 @@ body * {
 // portfolio page =====================
 
 .portfolio-page {
-  padding: 3rem 15rem;
+
+  padding: 2rem;
+
+  @media(min-width: 1600px) {
+    padding: 3rem 10rem;
+
+  }
 }
 
+.portfolio-page__block {
+
+
+  padding: 3rem 10rem;
+}
+
+
+.portfolio-page__item {
+  padding-left: 2rem;
+  padding-top: 2rem;
+  border-left:3px solid #e3d4dcd7;
+  border-bottom:3px solid #e3d4dcd7;
+}
 
 .header-text__cat {
   color: $gray;
@@ -424,11 +450,24 @@ body * {
 
 .portfolio-page__header-text {
   margin: 0;
-  padding: 0;
+  @media(min-width: 768px) {
+    padding: 2rem 10rem;
+  }
 }
 
 // container-fluid_no-padding - модфикатор
 .container-fluid_no-padding {
   padding: 0;
+  background: #f6f5fa;
 
+}
+
+.portfolio-page-block__header {
+  color: $gray;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.block-divider {
+  border-bottom: 3px solid darken(#f2e4de, 3%);
 }
