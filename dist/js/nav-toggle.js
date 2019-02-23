@@ -1,1 +1,1 @@
-for(var links=document.querySelectorAll(".nav-item>.nav-link"),amount=links.length,i=0;i<amount;i++)links[i].addEventListener("click",function(){!function(){for(var i=0;i<amount;i++)links[i].classList.remove("active")}(),this.classList.add("active")});
+let links=document.querySelectorAll(".nav-item>.nav-link"),amount=links.length;for(let t=0;t<amount;t++)links[t].addEventListener("click",function(){!function(){for(let t=0;t<amount;t++)links[t].classList.remove("active")}(),this.classList.add("active")});

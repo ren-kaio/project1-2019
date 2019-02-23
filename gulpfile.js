@@ -5,7 +5,7 @@
 
 let gulp = require("gulp");
 let concat = require("gulp-concat"); // files concatenation - not neccessary here  - delete from here and from package.json ??
-let uglify = require("gulp-uglify"); // js minification
+let uglify = require("gulp-uglify-es").default; // js minification
 let sass = require("gulp-sass");
 let browserSync = require("browser-sync").create();
 let imagemin = require("gulp-imagemin");

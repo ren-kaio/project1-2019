@@ -1,7 +1,7 @@
 // MapInit - инициализация карт
 
 function initialize() {
-    var mapOptions = {
+    let mapOptions = {
         center: new google.maps.LatLng(28.1823294, -82.352912),
         zoom: 9,
         mapTypeId: google.maps.MapTypeId.HYBRID,
@@ -15,6 +15,6 @@ function initialize() {
         overviewMapControl: true,
         rotateControl: true,
     };
-    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+    let map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 }
 google.maps.event.addDomListener(window, 'load', initialize);
